@@ -1,0 +1,37 @@
+# fly.toml app configuration file generated for cupcake on 2026-10-30T17:19:18-07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'cupcake'
+primary_region = 'sjc'
+
+[build]
+
+[env]
+  DB_PATH = '/data/concierge.db'
+  OWNER_NAME = 'Ziad'
+
+[[mounts]]
+  source = 'concierge_data'
+  destination = '/data'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'off'
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [[http_service.checks]]
+    interval = '30s'
+    timeout = '5s'
+    grace_period = '10s'
+    method = 'GET'
+    path = '/healthz'
+
+[[vm]]
+  size = 'shared-cpu-1x'
+  memory = '512mb'
+  cpus = 1
+  memory_mb = 512

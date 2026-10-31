@@ -1,0 +1,24 @@
+{
+  "name": "concierge-inbox",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 8080"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "@copilotkit/react-core": "^1.83.0",
+    "@copilotkit/react-ui": "^1.83.0",
+    "@copilotkit/runtime": "^1.83.0",
+    "@copilotkit/runtime-client-gql": "^1.83.0",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}
